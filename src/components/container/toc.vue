@@ -12,22 +12,6 @@
         class="umo-toc-empty"
         v-text="t('toc.empty')"
       ></div>
-      <div
-        v-for="item in tableOfContents"
-        v-else
-        :key="item.id"
-        class="umo-toc-item"
-        :class="{
-          active: item.isActive,
-          ['level-' + item.level]: true,
-        }"
-        :data-heading="'H' + (item.level ?? item.originalLevel)"
-        @click="headingClick(item as unknown as TableOfContentItem)"
-      >
-        <div class="umo-toc-text">
-          {{ item.title ?? item.textContent }}
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -35,12 +19,12 @@
 <script setup lang="ts">
 import { TextSelection } from '@tiptap/pm/state'
 
-import type { TableOfContentItem } from '@/composables/store'
+//import type { TableOfContentItem } from '@/composables/store'
 
-const { container, editor, tableOfContents } = useStore()
+const { container, editor } = useStore()
 
 defineEmits(['close'])
-
+/*
 const headingClick = (heading: TableOfContentItem) => {
   if (!editor.value) {
     return
@@ -69,6 +53,7 @@ const headingClick = (heading: TableOfContentItem) => {
   editor.value.view.dispatch(tr)
   editor.value.view.focus()
 }
+*/
 </script>
 
 <style lang="less" scoped>

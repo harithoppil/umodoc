@@ -18,9 +18,8 @@ import Typography from '@tiptap/extension-typography'
 import Underline from '@tiptap/extension-underline'
 import StarterKit from '@tiptap/starter-kit'
 import type { Editor } from '@tiptap/vue-3'
-import Mathematics from '@tiptap-pro/extension-mathematics'
-import { TableOfContents } from '@tiptap-pro/extension-table-of-contents'
-import { getHierarchicalIndexes } from '@tiptap-pro/extension-table-of-contents'
+//import { TableOfContents } from '@tiptap-pro/extension-table-of-contents'
+//import { getHierarchicalIndexes } from '@tiptap-pro/extension-table-of-contents'
 
 import { shortId } from '@/utils/short-id'
 
@@ -55,8 +54,8 @@ import TextBox from './text-box'
 import Toc from './toc'
 import Video from './video'
 
-const { options, container, tableOfContents } = useStore()
-
+//const { options, container, tableOfContents } = useStore()
+const { options, container } = useStore()
 const { dicts, document: doc, file } = options.value
 
 export const extensions = [
@@ -121,7 +120,6 @@ export const extensions = [
   ColorHighlighter,
   hr,
   Iframe,
-  Mathematics,
 
   // 表格
   Table.configure({
@@ -135,6 +133,7 @@ export const extensions = [
   Toc,
   // 其他
   Selection,
+  /*
   TableOfContents.configure({
     getIndex: getHierarchicalIndexes,
     onUpdate: (content) => {
@@ -146,6 +145,7 @@ export const extensions = [
       ) as HTMLElement,
     getId: () => shortId(6),
   }),
+  */
   Typography.configure(doc.typographyRules),
   CharacterCount.configure({
     limit: doc.characterLimit !== 0 ? doc.characterLimit : undefined,

@@ -30,7 +30,6 @@
 <script setup lang="ts">
 import Typography from '@tiptap/extension-typography'
 import { Editor, EditorContent, type Extension } from '@tiptap/vue-3'
-import Mathematics from '@tiptap-pro/extension-mathematics'
 
 import { extensions } from '@/extensions'
 import Image from '@/extensions/image'
@@ -47,7 +46,7 @@ if (
   !options.value.document?.enableMarkdown ||
   !$document.value?.enableMarkdown
 ) {
-  enableRules = [Mathematics, Typography, Image as Extension]
+  enableRules = [Typography, Image as Extension]
 }
 
 const defaultLineHeight = $computed(
