@@ -53,6 +53,7 @@ import TextBox from './text-box'
 // 页面
 import Toc from './toc'
 import Video from './video'
+import { useStore } from '@/composables/store'
 
 //const { options, container, tableOfContents } = useStore()
 const { options, container } = useStore()
